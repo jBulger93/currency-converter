@@ -9,8 +9,13 @@ request.onreadystatechange = function () {
         var rates = responseJSON.rates
         currencyConverter.setRates(rates)
     for (var rate in rates) {
-    $('#rates').append('<li><strong>' + rate + ':</strong> ' + rates[rate] + '</li>')
+    $('#rates').append('<li><strong>' + rate + ':</strong> ' + rates[rate] + '</li>')  
         }
+    var amount = prompt('How much GBP are you looking to convert?')
+    var currency = prompt('What currency would you like to convert to(enter three digit code in CAPS e.g EUR)?')
+    var convertedAmount = currencyConverter.convertTo(currency, amount)
+
+    alert (amount + ' GBP in ' + currency + ' is ' + convertedAmount)
      }
 }
 
