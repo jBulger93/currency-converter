@@ -5,16 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Currency Converter</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
+<div id='overlay'>
+    <div id='inner'>
+        <h2>Retrieving latest exchange rates</h2>
+        <div class="loader">Loading...</div>
+        <h3>Please wait...</h3>
+        
+    </div>
+    </div>
+    <div id='message'></div>
     <h2>1 <strong>GBP</strong> is equivelent to:</h2> 
     <ul id="rates">
-    </ul>    
+    </ul> 
+    <form method ="post" id="js-convert-gbp">
+        <input type="text" name="amount" placeholder="enter amount to convert in GBP" class="form-control">
+        <select id="ratesDropdown" name="currency" class="form-control">
+            <option>Choose a rate to convert to</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Convert</button>
+    </form>   
     <script
     src="http://code.jquery.com/jquery-3.2.1.min.js"
     integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/currencyconverter.js"></script>
     <script type="text/javascript" src="js/request.js"></script>
+    <script type="text/javascript" src="js/form.js"></script>
+    <script type="text/javascript" src="js/rateDefinitions.js"></script>
 </body>
 </html>
